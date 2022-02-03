@@ -14,10 +14,11 @@ public class Main {
         int[] temps = new int[14];
         for (int i = 0; i < 14; i++) {
             temps[i] = (int) (Math.random() * (_max - _min)+ _min);
-            System.out.println(temps[i]);
+            //System.out.println(temps[i]);
         }
 
-        System.out.println(calcAvg(temps));
+        System.out.println("Calculated average: "+calcAvg(temps));
+        System.out.println("Maximum value: "+calcMax(temps));
 
     }
 
@@ -31,5 +32,19 @@ public class Main {
         return (avgSum / temps.length);
 
     }
+
+    private static int calcMax(int[] temps) {
+
+        int maxTemp = 0;
+        for (int i : temps) {
+            if (i > maxTemp) {
+                maxTemp = i;
+            }
+        }
+
+        return maxTemp;
+
+    }
+
 
 }
